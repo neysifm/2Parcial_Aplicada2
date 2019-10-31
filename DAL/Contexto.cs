@@ -10,7 +10,7 @@ namespace DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Parcial> Parcial { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }
 
         public Contexto() : base("Constr")
         {

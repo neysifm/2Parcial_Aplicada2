@@ -11,17 +11,19 @@ namespace BLL
 {
     public class RepositorioBase<T> : IDisposable, IRepository<T> where T : class
     {
-        internal Contexto contexto;
+        
 
         // CONSTRUCTOR
         public RepositorioBase()
         {
-            contexto = new Contexto();
+          
         }
 
         // METODO GUARDAR
         public virtual bool Guardar(T entity)
         {
+            Contexto contexto = new Contexto();
+
             bool Paso = false;
             try
             {
@@ -42,6 +44,7 @@ namespace BLL
         // METODO MODIFICAR
         public virtual bool Modificar(T entity)
         {
+            Contexto contexto = new Contexto();
             bool Paso = false;
             try
             {
@@ -62,6 +65,7 @@ namespace BLL
         // METODO BUSCAR
         public virtual T Buscar(int id)
         {
+            Contexto contexto = new Contexto();
             T entity;
             try
             {
@@ -81,6 +85,7 @@ namespace BLL
         // LISTAR
         public virtual List<T> GetList(Expression<Func<T, bool>> expression)
         {
+            Contexto contexto = new Contexto();
             List<T> lista = new List<T>();
             try
             {
@@ -100,6 +105,7 @@ namespace BLL
         // METODO ELIMINAR
         public virtual bool Eliminar(int id)
         {
+            Contexto contexto = new Contexto();
             bool Paso = false;
             T entity;
             try
